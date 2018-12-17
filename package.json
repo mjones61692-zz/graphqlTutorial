@@ -1,0 +1,22 @@
+{
+  "name": "graphqltutorial",
+  "version": "1.0.0",
+  "description": "Tutorial to learn GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjones61692/graphqlTutorial.git"
+  },
+  "author": "MLJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjones61692/graphqlTutorial/issues"
+  },
+  "homepage": "https://github.com/mjones61692/graphqlTutorial#readme",
+  "dependencies": {
+    "graphql": "^14.0.2"
+  }
+}
