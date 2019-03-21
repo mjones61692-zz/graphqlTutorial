@@ -2,10 +2,10 @@ import ApolloClient from 'apollo-boost';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
-const client = new ApolloClient({
-  uri: '/graphql'
-});
+const client = new ApolloClient();
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +17,24 @@ class App extends React.Component {
       <ApolloProvider client={client}>
       <div>
         <h1>Testing out Apollo / GraphQL!</h1>
+        <Query
+          query={gql`
+            {
+              hello
+            }
+          `}
+        >
+          {({ loading, error, data }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error :(</p>;
+
+            return (
+              <div>
+                <p>{JSON.stringify(data)}</p>
+              </div>
+            );
+          }}
+        </Query>
       </div>
       </ApolloProvider>
     )
